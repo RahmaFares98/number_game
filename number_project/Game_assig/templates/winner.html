@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Congrats!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/Great_style.css' %}">   
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>{{number}} was the Number!
+            <span> <button a onclick="playAgain()" class="PlayagainBtn" type="submit">Play again !</button>
+            </span>
+        </h1>
+        <p>You guessed the number in {{attempts}} attempts.</p>
+        <form method="POST" action="/winner">
+            {%csrf_token%}
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name" name="name" required>
+            <button  class="submitWinBtn" type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="{% static 'js/Great_script.js' %}"></script>
+
+</body>
+
+</html>

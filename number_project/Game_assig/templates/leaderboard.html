@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Leaderboard</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/Great_style.css' %}">   
+</head>
+
+<body>
+    <div class="container">
+        <h8>Leaderboard</h8>
+        <table class="tableStyle">
+            <thead>
+                <tr>
+                    <th class="Name">Name</th>
+                    <th Class= "attempts">Attempts </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for winner in winners %}
+                <tr>
+                    <td>{{ winner.name }}</td>
+                    <td>{{ winner.attempts }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
